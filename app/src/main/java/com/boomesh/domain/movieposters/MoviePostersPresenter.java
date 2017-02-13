@@ -1,6 +1,6 @@
-package com.boomesh.themoviedb.movieposters;
+package com.boomesh.domain.movieposters;
 
-import com.boomesh.themoviedb.base.Presentable;
+import com.boomesh.domain.base.Presentable;
 
 /**
  * In charge of determining when to show movie posters, as well as issuing the fetch requests

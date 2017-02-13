@@ -1,6 +1,6 @@
-package com.boomesh.themoviedb.movieposters;
+package com.boomesh.domain.movieposters;
 
-import com.boomesh.themoviedb.base.Viewable;
+import com.boomesh.domain.base.Viewable;
 
 /**
  * Views that intend to display movie posters, must implement this
