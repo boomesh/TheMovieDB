@@ -13,6 +13,6 @@ import retrofit2.http.GET;
  */
 
 public interface TheMovieDBService {
-    @GET("/movie/popular/")
+    @GET("movie/popular")
     Observable<PopularMoviePage> getPopularMovies();
 }

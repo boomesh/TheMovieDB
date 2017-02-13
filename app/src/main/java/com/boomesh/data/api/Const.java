@@ -6,7 +6,7 @@ package com.boomesh.data.api;
  */
 
 public class Const {
-    static final String BASE_URL = "https://api.themoviedb.org";
+    static final String BASE_URL = "https://api.themoviedb.org/3/";
 
     static final String API_KEY = "HELLO";
 }
