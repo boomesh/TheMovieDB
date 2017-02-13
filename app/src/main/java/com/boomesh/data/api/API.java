@@ -33,7 +33,7 @@ public class API {
             clientBuilder.addInterceptor(new APIKeyInterceptor());
 
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(Const.BASE_URL)
+                    .baseUrl(Const.API_BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(clientBuilder.build())
