@@ -7,7 +7,7 @@ package com.boomesh.data.api;
 
 public class Const {
     static final String API_BASE_URL = "https://api.themoviedb.org/3/";
-    static final String IMG_BASE_URL = "https://image.tmdb.org/t/p/w185/";
+    public static final String IMG_BASE_URL = "https://image.tmdb.org/t/p/w300";
 
     static final String API_KEY = "HELLO";
 }

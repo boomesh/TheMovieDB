@@ -1,4 +1,4 @@
-package com.boomesh.data.api.GetPopularMovies;
+package com.boomesh.data.api.GetPopularMovies.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -24,4 +24,8 @@ public class PopularMoviePage {
     @SerializedName("total_pages")
     @Expose
     private Integer totalPages;
+
+    public List<PopularMovie> getResults() {
+        return results;
+    }
 }

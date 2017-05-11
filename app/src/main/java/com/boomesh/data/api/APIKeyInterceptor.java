@@ -2,6 +2,8 @@ package com.boomesh.data.api;
 
 import java.io.IOException;
 
+import javax.inject.Inject;
+
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.Request;
@@ -13,6 +15,11 @@ import okhttp3.Response;
  */
 
 class APIKeyInterceptor implements Interceptor {
+
+    @Inject
+    public APIKeyInterceptor() {
+    }
+
     @Override
     public Response intercept(Chain chain) throws IOException {
         HttpUrl newRequestURL =
