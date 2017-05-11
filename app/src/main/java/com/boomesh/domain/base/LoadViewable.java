@@ -5,6 +5,5 @@ package com.boomesh.domain.base;
  */
 
 public interface LoadViewable extends Viewable{
-    void showLoading();
-    void hideLoading();
+    void showLoading(boolean isLoading);
 }

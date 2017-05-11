@@ -3,6 +3,7 @@ package com.boomesh.themoviedb.movieposters;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -27,6 +28,7 @@ public class MoviePosterFragment
         implements MoviePostersViewable {
     private static final String TAG = MoviePosterFragment.class.getSimpleName();
     private RecyclerView postersRecyclerView;
+    private SwipeRefreshLayout swipeRefreshLayout;
     @Nullable
     private MoviePosterAdapter adapter;
 
@@ -40,6 +42,12 @@ public class MoviePosterFragment
 
         postersRecyclerView = (RecyclerView) view.findViewById(R.id.posters_rv);
         postersRecyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+
+        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.loading_layout_srl);
+        swipeRefreshLayout.setOnRefreshListener(() -> {
+            getPresenter().fetchPosters();
+        });
+
         getPresenter().fetchPosters();
     }
 
@@ -64,13 +72,8 @@ public class MoviePosterFragment
 
     //<editor-fold desc="MoviePostersViewable">
     @Override
-    public void showLoading() {
-        // TODO: 5/9/17 show loading
-    }
-
-    @Override
-    public void hideLoading() {
-        // TODO: 5/9/17 hide loading
+    public void showLoading(boolean isLoading) {
+        swipeRefreshLayout.setRefreshing(isLoading);
     }
 
     @Override

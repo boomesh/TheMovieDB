@@ -2,7 +2,7 @@
 # By default, the flags in this file are appended to flags specified
 # in /Users/sumesh/Library/Android/sdk/tools/proguard/proguard-android.txt
 # You can edit the include path and order by changing the proguardFiles
-# directive in build.gradle.
+# directive in buildRequest.gradle.
 #
 # For more details, see
 #   http://developer.android.com/guide/developing/tools/proguard.html
@@ -42,3 +42,9 @@
 -keepattributes Signature
 # Retain declared checked exceptions for use by a Proxy instance.
 -keepattributes Exceptions
+
+###############
+### DAGGER2 ###
+###############
+## https://github.com/google/dagger/issues/645
+-dontwarn com.google.errorprone.annotations.*

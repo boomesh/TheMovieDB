@@ -22,10 +22,10 @@ public class MoviePostersPresenter extends BasePresenter<MoviePostersViewable> {
         apiRequestFactory
                 .make(new GetPopularMovies())
                 .doOnSubscribe(disposable -> {
-                    getView().showLoading();
+                    getView().showLoading(true);
                 })
                 .doFinally(() -> {
-                    getView().hideLoading();
+                    getView().showLoading(false);
                 })
                 .subscribe(popularMoviePage -> {
                     getView().showPosters(popularMoviePage.getResults());
