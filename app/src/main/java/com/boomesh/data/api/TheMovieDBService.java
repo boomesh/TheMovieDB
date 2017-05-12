@@ -19,6 +19,6 @@ public interface TheMovieDBService {
     @GET("movie/popular")
     Single<MoviesPage> getPopularMovies();
 
-    @GET("/movie/top_rated")
+    @GET("movie/top_rated")
     Single<MoviesPage> getTopRatedMovies();
 }

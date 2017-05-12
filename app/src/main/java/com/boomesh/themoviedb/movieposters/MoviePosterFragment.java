@@ -6,10 +6,14 @@ import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.boomesh.data.api.common.models.Movie;
 import com.boomesh.domain.movieposters.MoviePostersPresenter;
@@ -17,6 +21,7 @@ import com.boomesh.domain.movieposters.MoviePostersViewable;
 import com.boomesh.themoviedb.App;
 import com.boomesh.themoviedb.R;
 import com.boomesh.themoviedb.base.BaseFragment;
+import com.boomesh.themoviedb.base.BaseFragmentActivity;
 import com.boomesh.themoviedb.movieposters.adapter.MoviePosterAdapter;
 
 import java.util.List;
@@ -40,6 +45,13 @@ public class MoviePosterFragment
     }
 
     //<editor-fold desc="Life Cycle">
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -57,6 +69,8 @@ public class MoviePosterFragment
     //<editor-fold desc="Menu Life Cycle">
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        Log.e(TAG, "onCreateOptionsMenu");
         inflater.inflate(R.menu.main_menu, menu);
     }
 

@@ -2,12 +2,10 @@ package com.boomesh.data.api.base;
 
 import android.support.annotation.NonNull;
 
-import com.boomesh.data.api.API;
 import com.boomesh.data.api.TheMovieDBService;
 
 import javax.inject.Inject;
 
-import io.reactivex.Scheduler;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;

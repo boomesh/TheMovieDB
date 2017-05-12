@@ -1,6 +1,7 @@
 package com.boomesh.themoviedb.base;
 
 import android.os.Bundle;
+import android.support.annotation.CallSuper;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -25,8 +26,9 @@ public abstract class BaseFragment<V extends Viewable, P extends BasePresenter<V
 
     //region Life Cycle
     @Nullable
+    @CallSuper
     @Override
-    public final View onCreateView(
+    public View onCreateView(
             LayoutInflater inflater,
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState) {

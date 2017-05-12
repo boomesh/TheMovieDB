@@ -30,6 +30,7 @@ public class MoviePostersPresenter extends BasePresenter<MoviePostersViewable> {
     }
 
     public void fetchMovies() {
+        // TODO: 5/12/17 handle onError gracefully
         apiRequestFactory
                 .make(filterRequest.apiRequest)
                 .doOnSubscribe(disposable -> {
