@@ -1,5 +1,14 @@
 apply plugin: 'com.android.application'
 
+def APIKeys = new Properties()
+rootProject.file(APIKEYS_PROPERTIES_FILE).withInputStream {
+    stream -> APIKeys.load(stream)
+}
+
+def static getString(Properties properties, String key) {
+    "\"" + properties[key] + "\"";
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -10,7 +19,9 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
-//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "TMDB_API_KEY", getString(APIKeys, "TMDB_API_KEY")
 
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_8

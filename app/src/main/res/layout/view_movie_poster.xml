@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="185dp"
-    android:padding="10dp">
+    android:padding="8dp">
 
     <ImageView
         android:id="@+id/movie_poster_iv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerInside"
+        android:scaleType="fitCenter"
         tools:ignore="ContentDescription" />
 </FrameLayout>

@@ -70,7 +70,6 @@ public class MoviePosterFragment
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        Log.e(TAG, "onCreateOptionsMenu");
         inflater.inflate(R.menu.main_menu, menu);
     }
 
