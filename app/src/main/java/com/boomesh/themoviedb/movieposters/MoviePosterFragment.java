@@ -6,9 +6,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
-import com.boomesh.data.api.GetPopularMovies.models.PopularMovie;
+import com.boomesh.data.api.common.models.Movie;
 import com.boomesh.domain.movieposters.MoviePostersPresenter;
 import com.boomesh.domain.movieposters.MoviePostersViewable;
 import com.boomesh.themoviedb.App;
@@ -36,6 +39,7 @@ public class MoviePosterFragment
         return new MoviePosterFragment();
     }
 
+    //<editor-fold desc="Life Cycle">
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -45,11 +49,30 @@ public class MoviePosterFragment
 
         swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.loading_layout_srl);
         swipeRefreshLayout.setOnRefreshListener(() -> {
-            getPresenter().fetchPosters();
+            getPresenter().fetchMovies();
         });
-
-        getPresenter().fetchPosters();
     }
+    //</editor-fold>
+
+    //<editor-fold desc="Menu Life Cycle">
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.main_menu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_item_most_popular:
+                getPresenter().onMostPopularFilterSelected();
+                return true;
+            case R.id.menu_item_highest_rated:
+                getPresenter().onHighestRatedFilterSelected();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    //</editor-fold>
 
     //<editor-fold desc="BaseFragment">
     @NonNull
@@ -77,12 +100,12 @@ public class MoviePosterFragment
     }
 
     @Override
-    public void showPosters(@NonNull List<PopularMovie> popularMovies) {
+    public void showPosters(@NonNull List<Movie> movies) {
         if (adapter == null) {
-            adapter = new MoviePosterAdapter(popularMovies);
+            adapter = new MoviePosterAdapter(movies);
             postersRecyclerView.setAdapter(adapter);
         } else {
-            adapter.setList(popularMovies);
+            adapter.setList(movies);
             adapter.notifyDataSetChanged();
         }
     }

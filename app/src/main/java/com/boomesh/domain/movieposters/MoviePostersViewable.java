@@ -2,10 +2,8 @@ package com.boomesh.domain.movieposters;
 
 import android.support.annotation.NonNull;
 
-import com.boomesh.data.api.GetPopularMovies.models.PopularMovie;
-import com.boomesh.data.api.GetPopularMovies.models.PopularMoviePage;
+import com.boomesh.data.api.common.models.Movie;
 import com.boomesh.domain.base.LoadViewable;
-import com.boomesh.domain.base.Viewable;
 
 import java.util.List;
 
@@ -17,5 +15,5 @@ import java.util.List;
 
 public interface MoviePostersViewable extends LoadViewable {
 
-    void showPosters(@NonNull List<PopularMovie> popularMovies);
+    void showPosters(@NonNull List<Movie> movies);
 }

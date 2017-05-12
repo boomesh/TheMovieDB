@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.boomesh.data.api.GetPopularMovies.models.PopularMovie;
+import com.boomesh.data.api.common.models.Movie;
 import com.boomesh.themoviedb.R;
 
 import java.util.List;
@@ -15,9 +15,9 @@ import java.util.List;
  */
 
 public class MoviePosterAdapter extends RecyclerView.Adapter<MoviePosterViewHolder> {
-    private List<PopularMovie> movieList;
+    private List<Movie> movieList;
 
-    public MoviePosterAdapter(List<PopularMovie> movieList) {
+    public MoviePosterAdapter(List<Movie> movieList) {
         this.movieList = movieList;
     }
 
@@ -29,7 +29,7 @@ public class MoviePosterAdapter extends RecyclerView.Adapter<MoviePosterViewHold
 
     @Override
     public void onBindViewHolder(MoviePosterViewHolder holder, int position) {
-        PopularMovie movie = movieList.get(position);
+        Movie movie = movieList.get(position);
         holder.set(movie);
     }
 
@@ -38,7 +38,7 @@ public class MoviePosterAdapter extends RecyclerView.Adapter<MoviePosterViewHold
         return movieList.size();
     }
 
-    public void setList(List<PopularMovie> list) {
+    public void setList(List<Movie> list) {
         this.movieList = list;
     }
 }

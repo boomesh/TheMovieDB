@@ -35,8 +35,8 @@ public abstract class BaseFragment<V extends Viewable, P extends BasePresenter<V
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void onResume() {
+        super.onResume();
         getPresenter().attach((V) this);
     }
 

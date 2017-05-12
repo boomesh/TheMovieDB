@@ -1,4 +1,4 @@
-package com.boomesh.data.api.GetPopularMovies.models;
+package com.boomesh.data.api.common.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -11,7 +11,7 @@ import java.util.List;
  * Created by sumesh on 2/12/17.
  */
 
-public class PopularMovie {
+public class Movie {
     @SerializedName("poster_path")
     @Expose
     public String posterPath;

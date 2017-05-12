@@ -1,6 +1,6 @@
 package com.boomesh.data.api;
 
-import com.boomesh.data.api.GetPopularMovies.models.PopularMoviePage;
+import com.boomesh.data.api.common.models.MoviesPage;
 
 import javax.inject.Singleton;
 
@@ -17,5 +17,8 @@ import retrofit2.http.GET;
 @Singleton
 public interface TheMovieDBService {
     @GET("movie/popular")
-    Single<PopularMoviePage> getPopularMovies();
+    Single<MoviesPage> getPopularMovies();
+
+    @GET("/movie/top_rated")
+    Single<MoviesPage> getTopRatedMovies();
 }

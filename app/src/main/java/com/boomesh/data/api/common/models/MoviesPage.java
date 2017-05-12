@@ -1,4 +1,4 @@
-package com.boomesh.data.api.GetPopularMovies.models;
+package com.boomesh.data.api.common.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -11,13 +11,13 @@ import java.util.List;
  * Created by sumesh on 2/12/17.
  */
 
-public class PopularMoviePage {
+public class MoviesPage {
     @SerializedName("page")
     @Expose
     private Integer page;
     @SerializedName("results")
     @Expose
-    private List<PopularMovie> results = null;
+    private List<Movie> results = null;
     @SerializedName("total_results")
     @Expose
     private Integer totalResults;
@@ -25,7 +25,7 @@ public class PopularMoviePage {
     @Expose
     private Integer totalPages;
 
-    public List<PopularMovie> getResults() {
+    public List<Movie> getResults() {
         return results;
     }
 }

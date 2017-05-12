@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.boomesh.data.api.Const;
-import com.boomesh.data.api.GetPopularMovies.models.PopularMovie;
+import com.boomesh.data.api.common.models.Movie;
 import com.boomesh.themoviedb.R;
 import com.squareup.picasso.Picasso;
 
@@ -23,7 +23,7 @@ public class MoviePosterViewHolder extends RecyclerView.ViewHolder {
         moviePosterImageView = (ImageView) itemView.findViewById(R.id.movie_poster_iv);
     }
 
-    public void set(PopularMovie movie) {
+    public void set(Movie movie) {
         String imageURL = Const.IMG_BASE_URL + movie.posterPath;
         Picasso.with(itemView.getContext()).load(imageURL).into(moviePosterImageView);
     }

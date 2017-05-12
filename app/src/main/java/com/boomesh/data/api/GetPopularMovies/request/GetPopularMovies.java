@@ -2,8 +2,7 @@ package com.boomesh.data.api.GetPopularMovies.request;
 
 import android.support.annotation.NonNull;
 
-import com.boomesh.data.api.API;
-import com.boomesh.data.api.GetPopularMovies.models.PopularMoviePage;
+import com.boomesh.data.api.common.models.MoviesPage;
 import com.boomesh.data.api.TheMovieDBService;
 import com.boomesh.data.api.base.APIRequest;
 
@@ -15,11 +14,11 @@ import io.reactivex.Single;
  * Created by sumesh on 2/19/17.
  */
 
-public class GetPopularMovies implements APIRequest<PopularMoviePage> {
+public class GetPopularMovies implements APIRequest<MoviesPage> {
 
     @NonNull
     @Override
-    public Single<PopularMoviePage> buildRequest(TheMovieDBService api) {
+    public Single<MoviesPage> buildRequest(TheMovieDBService api) {
         return api.getPopularMovies();
     }
 }
