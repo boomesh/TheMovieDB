@@ -1,6 +1,9 @@
-package com.boomesh.domain.base;
+package com.boomesh.domain.base.message;
 
 import android.support.annotation.StringRes;
+
+import com.boomesh.domain.base.Viewable;
+import com.boomesh.domain.base.load.LoadPresenter;
 
 /**
  * {@link LoadPresenter} requires this to communicate errors to the {@link Viewable}

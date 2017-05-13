@@ -1,4 +1,4 @@
-package com.boomesh.themoviedb.movieposters;
+package com.boomesh.themoviedb.posters;
 
 import android.support.annotation.NonNull;
 

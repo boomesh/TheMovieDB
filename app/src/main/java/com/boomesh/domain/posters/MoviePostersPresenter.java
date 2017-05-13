@@ -1,4 +1,4 @@
-package com.boomesh.domain.movieposters;
+package com.boomesh.domain.posters;
 
 import com.boomesh.data.api.GetPopularMovies.request.GetPopularMovies;
 import com.boomesh.data.api.GetTopRatedMovies.request.GetTopRatedMovies;
@@ -6,7 +6,7 @@ import com.boomesh.data.api.base.APIRequest;
 import com.boomesh.data.api.base.APIRequestFactory;
 import com.boomesh.data.api.common.models.MoviesPage;
 import com.boomesh.domain.base.BasePresenter;
-import com.boomesh.domain.base.LoadPresenter;
+import com.boomesh.domain.base.load.LoadPresenter;
 
 /**
  * In charge of determining when to show movie posters, as well as issuing the fetch requests

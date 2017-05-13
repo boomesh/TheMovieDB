@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.boomesh.domain.base.BasePresenter;
-import com.boomesh.domain.base.MessageViewable;
+import com.boomesh.domain.base.message.MessageViewable;
 
 /**
  * All fragments inherit from this

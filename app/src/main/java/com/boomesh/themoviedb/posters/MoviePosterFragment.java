@@ -1,4 +1,4 @@
-package com.boomesh.themoviedb.movieposters;
+package com.boomesh.themoviedb.posters;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -6,8 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,13 +14,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.boomesh.data.api.common.models.Movie;
-import com.boomesh.domain.movieposters.MoviePostersPresenter;
-import com.boomesh.domain.movieposters.MoviePostersViewable;
+import com.boomesh.domain.posters.MoviePostersPresenter;
+import com.boomesh.domain.posters.MoviePostersViewable;
 import com.boomesh.themoviedb.App;
 import com.boomesh.themoviedb.R;
 import com.boomesh.themoviedb.base.BaseFragment;
-import com.boomesh.themoviedb.base.BaseFragmentActivity;
-import com.boomesh.themoviedb.movieposters.adapter.MoviePosterAdapter;
+import com.boomesh.themoviedb.posters.adapter.MoviePosterAdapter;
 
 import java.util.List;
 

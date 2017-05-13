@@ -1,10 +1,10 @@
-package com.boomesh.domain.movieposters;
+package com.boomesh.domain.posters;
 
 import android.support.annotation.NonNull;
 
 import com.boomesh.data.api.common.models.Movie;
-import com.boomesh.domain.base.LoadViewable;
-import com.boomesh.domain.base.MessageViewable;
+import com.boomesh.domain.base.load.LoadViewable;
+import com.boomesh.domain.base.message.MessageViewable;
 
 import java.util.List;
 

@@ -1,4 +1,6 @@
-package com.boomesh.domain.base;
+package com.boomesh.domain.base.load;
+
+import com.boomesh.domain.base.Viewable;
 
 /**
  * View that handle loading must implement this contract, as accompanying {@link LoadPresenter}

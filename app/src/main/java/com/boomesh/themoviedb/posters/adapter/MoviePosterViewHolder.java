@@ -1,4 +1,4 @@
-package com.boomesh.themoviedb.movieposters.adapter;
+package com.boomesh.themoviedb.posters.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

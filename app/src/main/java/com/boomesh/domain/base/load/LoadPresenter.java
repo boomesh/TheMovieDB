@@ -1,8 +1,10 @@
-package com.boomesh.domain.base;
+package com.boomesh.domain.base.load;
 
 import android.annotation.SuppressLint;
 
 import com.boomesh.data.api.base.APIResponse;
+import com.boomesh.domain.base.message.MessageViewable;
+import com.boomesh.domain.base.Presenter;
 
 import io.reactivex.Single;
 
