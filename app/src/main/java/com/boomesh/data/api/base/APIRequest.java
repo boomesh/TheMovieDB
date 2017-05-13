@@ -4,13 +4,16 @@ import android.support.annotation.NonNull;
 
 import com.boomesh.data.api.TheMovieDBService;
 
-import io.reactivex.Single;
+import retrofit2.Call;
 
 /**
+ * Subclasses must build the synchronous request.  {@link APIRequestFactory} will perform the request
+ * asynchronously.
+ *
  * Created by sumesh on 5/9/17.
  */
 
-public interface APIRequest<Response> {
+public interface APIRequest<Body> {
     @NonNull
-    Single<Response> buildRequest(TheMovieDBService api);
+    Call<Body> buildRequest(TheMovieDBService api);
 }

@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.boomesh.data.api.common.models.Movie;
 import com.boomesh.domain.base.LoadViewable;
+import com.boomesh.domain.base.MessageViewable;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
  * Created by sumesh on 2/12/17.
  */
 
-public interface MoviePostersViewable extends LoadViewable {
+public interface MoviePostersViewable extends LoadViewable, MessageViewable {
 
     void showPosters(@NonNull List<Movie> movies);
 }

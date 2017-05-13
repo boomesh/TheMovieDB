@@ -1,13 +1,20 @@
 package com.boomesh.domain.base;
 
-public class BasePresenter<V extends Viewable> {
+public abstract class BasePresenter<V extends Viewable> implements Presenter<V> {
     private V view;
 
-    public void attach(V viewable) {
+    protected abstract void onAttach(V viewable);
+
+    //<editor-fold desc="Presenter">
+    @Override
+    public final void attach(V viewable) {
         view = viewable;
+        onAttach(viewable);
     }
 
-    protected final V getView() {
+    @Override
+    public final V getView() {
         return view;
     }
+    //</editor-fold>
 }

@@ -5,13 +5,14 @@ import android.support.annotation.CallSuper;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.boomesh.domain.base.BasePresenter;
-import com.boomesh.domain.base.Viewable;
+import com.boomesh.domain.base.MessageViewable;
 
 /**
  * All fragments inherit from this
@@ -19,8 +20,8 @@ import com.boomesh.domain.base.Viewable;
  * Created by sumesh on 2/7/17.
  */
 
-public abstract class BaseFragment<V extends Viewable, P extends BasePresenter<V>>
-        extends Fragment implements Viewable{
+public abstract class BaseFragment<V extends MessageViewable, P extends BasePresenter<V>>
+        extends Fragment implements MessageViewable {
 
     private P presenter;
 
@@ -53,6 +54,17 @@ public abstract class BaseFragment<V extends Viewable, P extends BasePresenter<V
         return presenter;
     }
     //endregion
+
+
+    //<editor-fold desc="MessageViewable">
+    @Override
+    public final void showMessage(int stringResID) {
+        Snackbar
+                .make(getActivity()
+                        .findViewById(android.R.id.content), stringResID, Snackbar.LENGTH_SHORT)
+                .show();
+    }
+    //</editor-fold>
 
     @NonNull
     protected abstract String getFragmentTag();

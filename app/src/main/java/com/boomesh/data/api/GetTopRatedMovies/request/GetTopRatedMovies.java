@@ -6,7 +6,7 @@ import com.boomesh.data.api.TheMovieDBService;
 import com.boomesh.data.api.base.APIRequest;
 import com.boomesh.data.api.common.models.MoviesPage;
 
-import io.reactivex.Single;
+import retrofit2.Call;
 
 /**
  * Fetch the top rated movies from TMDB
@@ -17,7 +17,7 @@ import io.reactivex.Single;
 public class GetTopRatedMovies implements APIRequest<MoviesPage> {
     @NonNull
     @Override
-    public Single<MoviesPage> buildRequest(TheMovieDBService api) {
+    public Call<MoviesPage> buildRequest(TheMovieDBService api) {
         return api.getTopRatedMovies();
     }
 }

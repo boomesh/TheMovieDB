@@ -2,11 +2,11 @@ package com.boomesh.data.api.GetPopularMovies.request;
 
 import android.support.annotation.NonNull;
 
-import com.boomesh.data.api.common.models.MoviesPage;
 import com.boomesh.data.api.TheMovieDBService;
 import com.boomesh.data.api.base.APIRequest;
+import com.boomesh.data.api.common.models.MoviesPage;
 
-import io.reactivex.Single;
+import retrofit2.Call;
 
 /**
  * Interface to fetch the list of popular movies from the datasource
@@ -18,7 +18,7 @@ public class GetPopularMovies implements APIRequest<MoviesPage> {
 
     @NonNull
     @Override
-    public Single<MoviesPage> buildRequest(TheMovieDBService api) {
+    public Call<MoviesPage> buildRequest(TheMovieDBService api) {
         return api.getPopularMovies();
     }
 }
