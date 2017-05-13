@@ -19,7 +19,9 @@ import com.boomesh.domain.posters.MoviePostersViewable;
 import com.boomesh.themoviedb.App;
 import com.boomesh.themoviedb.R;
 import com.boomesh.themoviedb.base.BaseFragment;
+import com.boomesh.themoviedb.details.MovieDetailsActivity;
 import com.boomesh.themoviedb.posters.adapter.MoviePosterAdapter;
+import com.boomesh.themoviedb.posters.adapter.MoviePosterViewHolder;
 
 import java.util.List;
 
@@ -30,7 +32,7 @@ import java.util.List;
 
 public class MoviePosterFragment
         extends BaseFragment<MoviePostersViewable, MoviePostersPresenter>
-        implements MoviePostersViewable {
+        implements MoviePostersViewable, MoviePosterViewHolder.Listener {
     private static final String TAG = MoviePosterFragment.class.getSimpleName();
     private RecyclerView postersRecyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
@@ -103,6 +105,13 @@ public class MoviePosterFragment
     }
     //</editor-fold>
 
+    //<editor-fold desc="MoviePosterViewHolder.Listener">
+    @Override
+    public void onPosterSelected(@NonNull Movie movie) {
+        getPresenter().onPosterSelected(movie);
+    }
+    //</editor-fold>
+
     //<editor-fold desc="MoviePostersViewable">
     @Override
     public void showLoading(boolean isLoading) {
@@ -114,10 +123,17 @@ public class MoviePosterFragment
         if (adapter == null) {
             adapter = new MoviePosterAdapter(movies);
             postersRecyclerView.setAdapter(adapter);
+            adapter.setListener(this);
         } else {
             adapter.setList(movies);
             adapter.notifyDataSetChanged();
         }
     }
+
+    @Override
+    public void showMovieDetails(@NonNull Movie movie) {
+        startActivity(MovieDetailsActivity.createStartIntentWithMovie(getContext(), movie));
+    }
     //</editor-fold>
+
 }

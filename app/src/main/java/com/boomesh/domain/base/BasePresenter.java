@@ -3,7 +3,7 @@ package com.boomesh.domain.base;
 public abstract class BasePresenter<V extends Viewable> implements Presenter<V> {
     private V view;
 
-    protected abstract void onAttach(V viewable);
+    protected void onAttach(V viewable){};
 
     //<editor-fold desc="Presenter">
     @Override

@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -33,6 +34,7 @@ public abstract class BaseFragment<V extends MessageViewable, P extends BasePres
             LayoutInflater inflater,
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
         presenter = createPresenter();
         return inflater.inflate(getFragmentContentLayout(), container, false);
     }
@@ -55,6 +57,21 @@ public abstract class BaseFragment<V extends MessageViewable, P extends BasePres
     }
     //endregion
 
+    //<editor-fold desc="Action Bar Helpers">
+    protected void showUp() {
+        ((BaseFragmentActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                getActivity().finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    //</editor-fold>
 
     //<editor-fold desc="MessageViewable">
     @Override

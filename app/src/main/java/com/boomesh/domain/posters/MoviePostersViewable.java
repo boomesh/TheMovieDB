@@ -17,4 +17,6 @@ import java.util.List;
 public interface MoviePostersViewable extends LoadViewable, MessageViewable {
 
     void showPosters(@NonNull List<Movie> movies);
+
+    void showMovieDetails(@NonNull Movie movie);
 }

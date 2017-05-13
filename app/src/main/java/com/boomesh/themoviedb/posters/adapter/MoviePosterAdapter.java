@@ -11,16 +11,21 @@ import com.boomesh.themoviedb.R;
 import java.util.List;
 
 /**
+ * List of posters displayed in a list.
+ *
  * Created by sumesh on 5/9/17.
  */
 
 public class MoviePosterAdapter extends RecyclerView.Adapter<MoviePosterViewHolder> {
     private List<Movie> movieList;
 
+    private MoviePosterViewHolder.Listener listener;
+
     public MoviePosterAdapter(List<Movie> movieList) {
         this.movieList = movieList;
     }
 
+    //<editor-fold desc=" RecyclerView.Adapter">
     @Override
     public MoviePosterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_movie_poster, parent, false);
@@ -31,14 +36,20 @@ public class MoviePosterAdapter extends RecyclerView.Adapter<MoviePosterViewHold
     public void onBindViewHolder(MoviePosterViewHolder holder, int position) {
         Movie movie = movieList.get(position);
         holder.set(movie);
+        holder.set(listener);
     }
 
     @Override
     public int getItemCount() {
         return movieList.size();
     }
+    //</editor-fold>
 
     public void setList(List<Movie> list) {
         this.movieList = list;
+    }
+
+    public void setListener(MoviePosterViewHolder.Listener listener) {
+        this.listener = listener;
     }
 }

@@ -4,6 +4,7 @@ import com.boomesh.data.api.GetPopularMovies.request.GetPopularMovies;
 import com.boomesh.data.api.GetTopRatedMovies.request.GetTopRatedMovies;
 import com.boomesh.data.api.base.APIRequest;
 import com.boomesh.data.api.base.APIRequestFactory;
+import com.boomesh.data.api.common.models.Movie;
 import com.boomesh.data.api.common.models.MoviesPage;
 import com.boomesh.domain.base.BasePresenter;
 import com.boomesh.domain.base.load.LoadPresenter;
@@ -50,6 +51,10 @@ public class MoviePostersPresenter
     public void onHighestRatedFilterSelected() {
         filterRequest = MoviesFilter.TOP_RATED;
         fetchMovies();
+    }
+
+    public void onPosterSelected(Movie movie) {
+        getView().showMovieDetails(movie);
     }
     //</editor-fold>
 
