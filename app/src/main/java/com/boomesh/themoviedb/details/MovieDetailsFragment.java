@@ -41,7 +41,7 @@ public class MovieDetailsFragment
         return fragment;
     }
 
-    //region Life Cycle
+    //<editor-fold desc="Life Cycle">
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -52,7 +52,7 @@ public class MovieDetailsFragment
         voteRatingsTextView = (TextView) view.findViewById(R.id.movie_vote_ratings_tv);
         synopsisTextView = (TextView) view.findViewById(R.id.movie_synopsis_tv);
     }
-    //endregion
+    //</editor-fold>
 
     //<editor-fold desc="BaseFragment">
     @NonNull

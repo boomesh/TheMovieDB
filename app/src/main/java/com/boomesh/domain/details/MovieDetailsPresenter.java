@@ -14,6 +14,7 @@ public class MovieDetailsPresenter extends BasePresenter<MovieDetailsViewable> {
 
     private Movie movie;
 
+    //<editor-fold desc="BasePresenter">
     @Override
     protected void onAttach(MovieDetailsViewable viewable) {
         super.onAttach(viewable);
@@ -24,7 +25,9 @@ public class MovieDetailsPresenter extends BasePresenter<MovieDetailsViewable> {
         updateMoviePoster();
         updateVoteAverage();
     }
+    //</editor-fold>
 
+    //<editor-fold desc="Update UI helpers">
     private void updateTitle() {
         getView().updateTitle(movie.title);
     }
@@ -44,6 +47,5 @@ public class MovieDetailsPresenter extends BasePresenter<MovieDetailsViewable> {
     private void updateVoteAverage() {
         getView().updateRatings(movie.voteAverage + " / 10");
     }
-
-
+    //</editor-fold>
 }
