@@ -48,3 +48,9 @@
 ###############
 ## https://github.com/google/dagger/issues/645
 -dontwarn com.google.errorprone.annotations.*
+
+##################
+### RETROLAMDA ###
+##################
+-dontwarn java.lang.invoke.*
+-dontwarn **$$Lambda$*
